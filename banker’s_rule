@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    long long int i,j,n,k,p,r1,T;
+    vector<char>v;
+    string s;
+    cout<<"Enter number for test case : ";
+    cin>>T;
+    while(T)
+    {
+        cout<<"Enter the Number : ";
+        cin>>s;
+        cout<<"Enter significant digit to round off a number : ";
+        cin>>p;
+        for(i=0; i<s.size(); i++)
+        {
+            if(s[i]=='.')
+            {
+                k=i;
+            }
+        }
+        n=k+p;
+
+
+        for(i=0; i<n; i++)
+        {
+            v.push_back(s[i]);
+        }
+         if(s[n+1]=='5')
+        {
+            if((s[i]-48)%2!=0)
+            {
+                r1=s[n]+1;
+                v.push_back(r1);
+
+            }
+            else
+            {
+                v.push_back(s[n]);
+            }
+        }
+      else if(s[n+1]>'5')
+        {
+            r1=s[n]+1;
+            v.push_back(r1);
+
+        }
+        else
+        {
+            v.push_back(s[n]);
+        }
+
+
+        for(i=0; i<v.size(); i++)
+        {
+            cout<<v[i];
+        }
+        cout<<endl;
+        v.clear();
+    }
+
+    return 0;
+}
